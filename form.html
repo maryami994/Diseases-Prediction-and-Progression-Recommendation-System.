@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Predictor</title>
+</head>
+<body style="font-family: Arial; padding: 40px;">
+    <h2>Enter Lab Test Data</h2>
+    <form action="/predict" method="post">
+        <label>Gender (0 = Female, 1 = Male):</label><input type="number" name="Gender" required><br><br>
+        <label>Hemoglobin:</label><input type="number" step="0.1" name="Hemoglobin_g_dL" required><br><br>
+        <label>RBC:</label><input type="number" step="0.1" name="RBC_million_uL" required><br><br>
+        <label>WBC:</label><input type="number" name="WBC_cells_uL" required><br><br>
+        <label>Hematocrit:</label><input type="number" step="0.1" name="Hematocrit_percent" required><br><br>
+        <label>Platelet Count:</label><input type="number" name="Platelet_Count_platelets_uL" required><br><br>
+        <label>Fasting Blood Sugar:</label><input type="number" name="Fasting_Blood_Sugar_mg_dL" required><br><br>
+        <label>Hemoglobin A1C:</label><input type="number" step="0.1" name="Hemoglobin_A1C_percent" required><br><br>
+        <label>Serum Creatinine:</label><input type="number" step="0.1" name="Serum_Creatinine_mg_dL" required><br><br>
+        <label>BUN:</label><input type="number" name="Blood_Urea_Nitrogen_BUN_mg_dL" required><br><br>
+        <label>GFR:</label><input type="number" name="Glomerular_Filtration_Rate_GFR_mL_min_1_73m2" required><br><br>
+        <label>ALT:</label><input type="number" name="Alanine_Aminotransferase_ALT_U_L" required><br><br>
+        <label>AST:</label><input type="number" name="Aspartate_Aminotransferase_AST_U_L" required><br><br>
+        <label>ALP:</label><input type="number" name="Alkaline_Phosphatase_ALP_U_L" required><br><br>
+        <label>Total Bilirubin:</label><input type="number" step="0.1" name="Total_Bilirubin_mg_dL" required><br><br>
+        <label>Total Cholesterol:</label><input type="number" name="Total_Cholesterol_mg_dL" required><br><br>
+        <label>LDL:</label><input type="number" name="LDL_mg_dL" required><br><br>
+        <label>HDL:</label><input type="number" name="HDL_mg_dL" required><br><br>
+        <label>Triglycerides:</label><input type="number" name="Triglycerides_mg_dL" required><br><br>
+        <label>Sodium:</label><input type="number" step="0.1" name="Sodium_mEq_L" required><br><br>
+        <label>Potassium:</label><input type="number" step="0.1" name="Potassium_mEq_L" required><br><br>
+        <label>Calcium:</label><input type="number" step="0.1" name="Calcium_mg_dL" required><br><br>
+        <label>Iron:</label><input type="number" name="Iron_ug_dL" required><br><br>
+        <label>Ferritin:</label><input type="number" name="Ferritin_ng_mL" required><br><br>
+        <label>Urine Protein (0 or 1):</label><input type="number" name="Urine_Protein" required><br><br>
+        <label>Urine Glucose (0 or 1):</label><input type="number" name="Urine_Glucose" required><br><br>
+        <label>RBC in Urine:</label><input type="number" step="0.1" name="Red_Blood_Cells_in_Urine_cells_HPF" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result is not none %}
+        <h3>Prediction Result: {{ result }}</h3>
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

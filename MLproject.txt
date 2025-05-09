@@ -1,0 +1,5 @@
+name: depi_disease_tracking
+
+entry_points:
+  main:
+    command: "python DepiProject_with_MLflow.py"
